@@ -232,45 +232,57 @@ footer {
     /* Pastikan ini di dalam @media screen and (max-width: 768px) */
 
     /* 1. CONTAINER UTAMA */
+    /* ========================================= */
+    /* FIX TAMPILAN HERO (MOBILE)          */
+    /* ========================================= */
+
+    /* 1. CONTAINER UTAMA: Kita reset jadi kolom biasa (Atas ke Bawah) */
     .hero .container {
         display: flex;
-        flex-direction: column-reverse; /* Foto di Atas, Teks di Bawah */
-        align-items: center; /* Paksa anak-anaknya baris di tengah */
+        flex-direction: column; /* JANGAN pake reverse, biar normal dulu */
+        align-items: center;
         justify-content: center;
-        text-align: center; /* Biar teksnya juga rata tengah */
-        width: 100%; /* Lebar Penuh */
-        padding: 20px 0; /* Kasih napas atas bawah */
-    }
-
-    /* 2. PEMBUNGKUS (KANDANG) GAMBAR & TEKS */
-    /* Ini penting! Kita paksa kotak pembungkusnya melebar */
-    .hero > div, 
-    .hero-text, 
-    .hero-image {
-        width: 100%; /* PENTING: Jangan biarkan dia ciut! */
-        display: flex; /* Biar bisa diatur isinya */
-        flex-direction: column;
-        align-items: center; /* Isinya juga harus di tengah */
-        justify-content: center;
-    }
-
-    /* 3. GAMBARNYA SENDIRI */
-    .hero img {
-        max-width: 60%; /* Biar gak kegedean di HP */
-        height: auto;
-        border-radius: 50%; /* Jaga-jaga biar tetep bulet */
-        margin-bottom: 20px; /* Jarak ke teks */
-        
-        /* Mantra anti-gagal */
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    /* 4. TOMBOL (Opsional) */
-    .btn-wrapper {
-        justify-content: center; /* Tombol juga ke tengah */
+        text-align: center;
         width: 100%;
+        padding-top: 30px; /* Kasih jarak atas biar gak nempel navbar */
+    }
+
+    /* 2. BAGIAN GAMBAR (FOTO) */
+    /* Kita cari elemen div yang ngebungkus gambar */
+    /* Biasanya elemen ke-2 di HTML, tapi kita paksa jadi JUARA 1 */
+    .hero .right-section, 
+    .hero img { 
+        order: 1; /* PERINTAH SAKTI: "Eh Foto, lu pindah ke urutan PERTAMA!" */
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px; /* Jarak antara foto ke teks */
+    }
+
+    .hero img {
+        max-width: 250px; /* Ukuran pas buat HP */
+        height: auto;
+        border-radius: 50%; /* Biar bulet */
+    }
+
+    /* 3. BAGIAN TEKS (Intro & Nama) */
+    /* Kita paksa jadi JUARA 2 (Di bawah foto) */
+    .hero .left-section,
+    .hero-text {
+        order: 2; /* "Eh Teks, lu antri di urutan KEDUA!" */
+        width: 100%;
+        display: flex;
+        flex-direction: column; /* Pastikan isinya (Judul, P, Ikon) tetep urut atas-bawah */
+        align-items: center; /* Rata tengah */
+    }
+
+    /* 4. BAGIAN IKON SOSMED (WA, IG, FB) */
+    /* Biasanya ini ada di dalem teks, tapi kita pastiin dia urut */
+    .socials, .social-links {
+        margin-top: 20px; /* Kasih jarak dari teks */
+        display: flex;
+        justify-content: center;
+        gap: 15px; /* Jarak antar ikon */
     }
 
     .hero h1 {
