@@ -195,3 +195,64 @@ footer {
 
     text-align: center;
 }
+
+/* ========================================= */
+/* RESPONSIVE (TAMPILAN HP)            */
+/* ========================================= */
+
+/* Kode di dalam sini cuma jalan kalau layar < 768px (HP/Tablet Kecil) */
+@media screen and (max-width: 768px) {
+
+    /* 1. CONTAINER: Biar gak mepet pinggir banget */
+    .container {
+        width: 90%; /* Kasih napas dikit di kiri kanan */
+    }
+
+    /* 2. NAVBAR: Menu jadi tumpuk ke bawah */
+    .nav-wrapper {
+        flex-direction: column; /* Ubah dari baris ke kolom */
+        gap: 15px;
+    }
+
+    .menu {
+        flex-wrap: wrap; /* Kalau menu kepanjangan, turun ke bawah */
+        justify-content: center;
+        gap: 5px; /* Rpetin dikit */
+    }
+
+    .menu li a {
+        font-size: 0.9rem; /* Kecilin huruf menu dikit */
+        padding: 8px 15px;
+    }
+
+    /* 3. HERO SECTION: Foto di atas, Teks di bawah */
+    .hero .container {
+        /* Kita asumsikan container di hero pake flexbox juga defaultnya */
+        display: flex;
+        flex-direction: column; 
+        text-align: center; /* Teks rata tengah */
+    }
+
+    .hero h1 {
+        font-size: 2rem; /* Judul jangan gede-gede amat */
+    }
+
+    .tagline {
+        font-size: 1rem;
+    }
+
+    /* 4. GRID SKILLS & PORTFOLIO: Jadi 1 Kolom */
+    .skills-grid, 
+    .portfolio-grid {
+        grid-template-columns: 1fr; /* Paksa jadi 1 kolom doang */
+    }
+
+    /* 5. FONT SIZE UMUM */
+    body {
+        font-size: 16px; /* Standar enak baca di HP */
+    }
+
+    h2 {
+        font-size: 1.8rem; /* Judul section disesuaikan */
+    }
+}
