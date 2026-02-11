@@ -226,11 +226,34 @@ footer {
     }
 
     /* 3. HERO SECTION: Foto di atas, Teks di bawah */
+    /* Cari bagian ini Cup 👇 */
+    /* Pastikan ini ada di dalam @media screen and (max-width: 768px) ya! */
+
     .hero .container {
-        /* Kita asumsikan container di hero pake flexbox juga defaultnya */
-        display: flex;
-        flex-direction: column; 
-        text-align: center; /* Teks rata tengah */
+        /* Susun jadi tumpuk ke bawah (Kolom) */
+        flex-direction: column-reverse; /* PENTING: Pake Reverse biar Gambar di ATAS, Teks di BAWAH */
+        
+        /* Paksa semua anak-anaknya ke tengah jalur */
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    /* INI KUNCI UTAMANYA CUP 👇 */
+    /* Kita tembak semua div yang ngebungkus gambar */
+    .hero div, .hero-img, .right-section { 
+        width: 100%; /* Lebarin bungkusnya */
+        display: flex; /* Aktifin flex di bungkus gambar */
+        justify-content: center; /* Paksa gambar ke tengah bungkusnya */
+        margin-bottom: 20px; /* Kasih jarak ke teks */
+    }
+
+    /* Dan gambarnya sendiri kita rapihin */
+    .hero img {
+        max-width: 70%; /* Biar di HP gak segede gaban */
+        height: auto;   /* Biar gak gepeng */
+        display: block; 
+        margin: 0 auto; /* Mantra tengah legendaris */
     }
 
     .hero h1 {
