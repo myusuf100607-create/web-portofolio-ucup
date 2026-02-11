@@ -226,57 +226,47 @@ footer {
     /* HERO SECTION - MOBILE FIX (JURUS NUKLIR) */
     /* ========================================= */
 
+/* ========================================= */
+    /* FINAL FIX: GAMBAR TENGAH, TEKS KIRI       */
+    /* ========================================= */
+
     .hero .container {
-        /* 1. Paksa jadi Kolom (Atas-Bawah) normal */
-        display: flex !important;
-        flex-direction: column !important; 
-        
-        /* 2. Reset posisi biar gak maksa tengah semua */
-        align-items: flex-start !important; /* Rata Kiri */
-        text-align: left !important; /* Teks Rata Kiri */
-        
+        /* Susunan tetep Atas-Bawah */
+        display: flex;
+        flex-direction: column; 
         padding-top: 20px;
     }
 
-    /* --- BAGIAN FOTO (DIPAKSA NAIK KE ATAS) --- */
-    /* Kita tembak semua kemungkinan pembungkus foto */
+    /* --- 1. GAMBAR (JANGAN UBAH, UDAH BENER) --- */
+    /* Kita kunci dia di urutan PERTAMA dan di TENGAH */
     .hero img, 
     .hero-image, 
-    .hero .right-section,
-    .hero div:last-child { 
-        /* Perintah sakti: "Lu pindah ke urutan PERTAMA!" */
-        order: -1 !important; 
-        
-        /* Biar Fotonya tetep di tengah layar (secara horizontal) */
-        align-self: center !important; 
-        margin: 0 auto 20px auto !important; /* Tengahin foto + Jarak bawah */
-        
-        /* Ukuran Foto */
-        max-width: 200px !important;
-        display: block !important;
+    .hero .right-section { 
+        order: -1; /* Paling Atas */
+        display: block;
+        margin: 0 auto 20px auto; /* Tengahin gambar secara horizontal */
+        max-width: 200px; /* Ukuran aman */
     }
 
-    /* --- BAGIAN TEKS (Intro, Nama, Deskripsi) --- */
-    .hero .left-section,
-    .hero-text,
-    .hero h1,
-    .hero p {
-        /* Balikin teks jadi Rata Kiri sesuai request lu */
-        text-align: left !important;
-        align-items: flex-start !important;
-        width: 100% !important;
+    /* --- 2. TEKS (FORCE RATA KIRI) --- */
+    .hero-text, 
+    .hero .left-section {
+        width: 100%;
+        text-align: left !important; /* Paksa Teks Rata Kiri */
+        align-items: flex-start !important; /* Flex item minggir kiri */
+        padding: 0 10px; /* Jaga jarak dikit dari pinggir layar */
     }
 
-    /* Khusus Judul "Web Developer" / Nama */
-    .hero h1 {
-        font-size: 2rem !important;
-        margin-top: 0 !important;
-        line-height: 1.2;
+    .hero h1, .hero p {
+        text-align: left !important; /* Judul & Paragraf Kiri */
     }
 
-    /* Tombol Sosmed biar tetep rapi */
+    /* --- 3. SOSMED (FIX JEJER SAMPING) --- */
     .social-links {
-        justify-content: flex-start !important; /* Sosmed ikut rata kiri */
+        display: flex !important; /* Aktifin Flexbox */
+        flex-direction: row !important; /* Paksa BARIS (Samping) */
+        justify-content: flex-start !important; /* Mulai dari Kiri */
+        gap: 20px; /* Jarak antar ikon */
         margin-top: 15px;
     }
 
