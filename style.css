@@ -229,31 +229,48 @@ footer {
     /* Cari bagian ini Cup 👇 */
     /* Pastikan ini ada di dalam @media screen and (max-width: 768px) ya! */
 
+    /* Pastikan ini di dalam @media screen and (max-width: 768px) */
+
+    /* 1. CONTAINER UTAMA */
     .hero .container {
-        /* Susun jadi tumpuk ke bawah (Kolom) */
-        flex-direction: column-reverse; /* PENTING: Pake Reverse biar Gambar di ATAS, Teks di BAWAH */
-        
-        /* Paksa semua anak-anaknya ke tengah jalur */
-        align-items: center;
+        display: flex;
+        flex-direction: column-reverse; /* Foto di Atas, Teks di Bawah */
+        align-items: center; /* Paksa anak-anaknya baris di tengah */
         justify-content: center;
-        text-align: center;
+        text-align: center; /* Biar teksnya juga rata tengah */
+        width: 100%; /* Lebar Penuh */
+        padding: 20px 0; /* Kasih napas atas bawah */
     }
 
-    /* INI KUNCI UTAMANYA CUP 👇 */
-    /* Kita tembak semua div yang ngebungkus gambar */
-    .hero div, .hero-img, .right-section { 
-        width: 100%; /* Lebarin bungkusnya */
-        display: flex; /* Aktifin flex di bungkus gambar */
-        justify-content: center; /* Paksa gambar ke tengah bungkusnya */
-        margin-bottom: 20px; /* Kasih jarak ke teks */
+    /* 2. PEMBUNGKUS (KANDANG) GAMBAR & TEKS */
+    /* Ini penting! Kita paksa kotak pembungkusnya melebar */
+    .hero > div, 
+    .hero-text, 
+    .hero-image {
+        width: 100%; /* PENTING: Jangan biarkan dia ciut! */
+        display: flex; /* Biar bisa diatur isinya */
+        flex-direction: column;
+        align-items: center; /* Isinya juga harus di tengah */
+        justify-content: center;
     }
 
-    /* Dan gambarnya sendiri kita rapihin */
+    /* 3. GAMBARNYA SENDIRI */
     .hero img {
-        max-width: 70%; /* Biar di HP gak segede gaban */
-        height: auto;   /* Biar gak gepeng */
-        display: block; 
-        margin: 0 auto; /* Mantra tengah legendaris */
+        max-width: 60%; /* Biar gak kegedean di HP */
+        height: auto;
+        border-radius: 50%; /* Jaga-jaga biar tetep bulet */
+        margin-bottom: 20px; /* Jarak ke teks */
+        
+        /* Mantra anti-gagal */
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* 4. TOMBOL (Opsional) */
+    .btn-wrapper {
+        justify-content: center; /* Tombol juga ke tengah */
+        width: 100%;
     }
 
     .hero h1 {
