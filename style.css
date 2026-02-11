@@ -197,114 +197,86 @@ footer {
 }
 
 /* ========================================= */
-/* RESPONSIVE (TAMPILAN HP)            */
+/* RESPONSIVE (TAMPILAN HP) - VERSI FINAL    */
 /* ========================================= */
 
-/* Kode di dalam sini cuma jalan kalau layar < 768px (HP/Tablet Kecil) */
 @media screen and (max-width: 768px) {
 
-    /* 1. CONTAINER: Biar gak mepet pinggir banget */
+    /* 1. CONTAINER: Biar gak mepet pinggir layar */
     .container {
-        width: 90%; /* Kasih napas dikit di kiri kanan */
+        width: 90%; 
+        padding: 0 15px;
     }
 
     /* 2. NAVBAR: Menu jadi tumpuk ke bawah */
     .nav-wrapper {
-        flex-direction: column; /* Ubah dari baris ke kolom */
+        flex-direction: column;
         gap: 15px;
+        padding: 15px 0;
     }
 
     .menu {
-        flex-wrap: wrap; /* Kalau menu kepanjangan, turun ke bawah */
+        flex-wrap: wrap; 
         justify-content: center;
-        gap: 5px; /* Rpetin dikit */
+        gap: 10px;
     }
 
-    .menu li a {
-        font-size: 0.9rem; /* Kecilin huruf menu dikit */
-        padding: 8px 15px;
-    }
-
-    /* 3. HERO SECTION: Foto di atas, Teks di bawah */
-    /* Cari bagian ini Cup 👇 */
-    /* Pastikan ini ada di dalam @media screen and (max-width: 768px) ya! */
-
-    /* Pastikan ini di dalam @media screen and (max-width: 768px) */
-
-    /* 1. CONTAINER UTAMA */
-    /* ========================================= */
-    /* FIX TAMPILAN HERO (MOBILE)          */
-    /* ========================================= */
-
-    /* 1. CONTAINER UTAMA: Kita reset jadi kolom biasa (Atas ke Bawah) */
+    /* 3. HERO SECTION (INTI MASALAH) */
     .hero .container {
-        display: flex;
-        flex-direction: column; /* JANGAN pake reverse, biar normal dulu */
+        /* PENTING: column-reverse membalik urutan! */
+        /* Gambar (yang tadinya kanan/bawah) jadi PALING ATAS */
+        /* Teks (yang tadinya kiri/atas) jadi DI BAWAHNYA */
+        flex-direction: column-reverse; 
+        
+        /* Ratakan semuanya ke tengah */
         align-items: center;
         justify-content: center;
         text-align: center;
-        width: 100%;
-        padding-top: 30px; /* Kasih jarak atas biar gak nempel navbar */
+        padding-top: 30px; /* Jarak dari navbar */
     }
 
-    /* 2. BAGIAN GAMBAR (FOTO) */
-    /* Kita cari elemen div yang ngebungkus gambar */
-    /* Biasanya elemen ke-2 di HTML, tapi kita paksa jadi JUARA 1 */
-    .hero .right-section, 
-    .hero img { 
-        order: 1; /* PERINTAH SAKTI: "Eh Foto, lu pindah ke urutan PERTAMA!" */
+    /* Ini mengatur kotak pembungkus teks & gambar biar lebar */
+    .hero .container > div {
         width: 100%;
         display: flex;
-        justify-content: center;
-        margin-bottom: 20px; /* Jarak antara foto ke teks */
+        flex-direction: column; /* Pastikan isi teks tetep urut (Judul -> Sosmed) */
+        align-items: center;
     }
 
+    /* Khusus Gambarnya */
     .hero img {
-        max-width: 250px; /* Ukuran pas buat HP */
-        height: auto;
-        border-radius: 50%; /* Biar bulet */
+        width: 200px; /* Ukuran pas di HP */
+        height: 200px; /* Biar bulet sempurna */
+        margin-bottom: 20px; /* Jarak antara Foto ke Teks Nama */
+        border: 3px solid #87CEEB; /* Hiasan dikit biar cakep */
     }
 
-    /* 3. BAGIAN TEKS (Intro & Nama) */
-    /* Kita paksa jadi JUARA 2 (Di bawah foto) */
-    .hero .left-section,
-    .hero-text {
-        order: 2; /* "Eh Teks, lu antri di urutan KEDUA!" */
-        width: 100%;
-        display: flex;
-        flex-direction: column; /* Pastikan isinya (Judul, P, Ikon) tetep urut atas-bawah */
-        align-items: center; /* Rata tengah */
-    }
-
-    /* 4. BAGIAN IKON SOSMED (WA, IG, FB) */
-    /* Biasanya ini ada di dalem teks, tapi kita pastiin dia urut */
-    .socials, .social-links {
-        margin-top: 20px; /* Kasih jarak dari teks */
-        display: flex;
-        justify-content: center;
-        gap: 15px; /* Jarak antar ikon */
-    }
-
+    /* Khusus Teksnya */
     .hero h1 {
-        font-size: 2rem; /* Judul jangan gede-gede amat */
+        font-size: 1.8rem; /* Jangan kegedean */
+        margin-top: 10px;
     }
 
     .tagline {
         font-size: 1rem;
     }
 
-    /* 4. GRID SKILLS & PORTFOLIO: Jadi 1 Kolom */
+    /* Sosmed biar rapi di tengah */
+    .social-links {
+        justify-content: center;
+        margin-top: 15px;
+    }
+
+    /* 4. SKILLS & PORTFOLIO: Jadi 1 Kolom ke bawah */
     .skills-grid, 
     .portfolio-grid {
-        grid-template-columns: 1fr; /* Paksa jadi 1 kolom doang */
+        grid-template-columns: 1fr; 
+        gap: 20px;
     }
 
-    /* 5. FONT SIZE UMUM */
-    body {
-        font-size: 16px; /* Standar enak baca di HP */
-    }
-
-    h2 {
-        font-size: 1.8rem; /* Judul section disesuaikan */
+    /* 5. FOOTER */
+    footer {
+        text-align: center;
+        font-size: 0.9rem;
     }
 }
