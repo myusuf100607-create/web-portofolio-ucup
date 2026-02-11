@@ -1,59 +1,49 @@
 /* ========================================= */
-/* 1. VARIABEL & RESET                       */
+/* 1. RESET & DASAR                          */
 /* ========================================= */
-:root {
-    --primary-blue: #5bd0ff;  /* Sky Blue (Aksen) */
-    --dark-grey: #333333;     /* Warna Footer & Navbar (Request Lu) */
-    --white: #ffffff;
-    --text-color: #333;
-}
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
-    background-color: var(--white);
-    color: var(--text-color);
-    overflow-x: hidden; /* Mencegah scroll samping di HP */
+    background-color: #ffffff;
+    color: #333333;
+    overflow-x: hidden; /* Biar gak bisa digeser ke samping */
+}
+
+/* Container biar isi web gak mepet pinggir */
+.container {
+    width: 90%;
+    max-width: 1100px; /* Lebar maksimal di laptop */
+    margin: 0 auto; /* Posisi tengah */
 }
 
 /* ========================================= */
-/* 2. NAVBAR (HEADER) - FIX WARNA GELAP      */
+/* 2. NAVBAR (HEADER) - WARNA GELAP          */
 /* ========================================= */
 header {
-    background-color: var(--dark-grey); /* FIX: Warna Gelap sesuai Footer */
-    position: sticky; /* Nempel di atas pas scroll */
+    background-color: #222222; /* Hitam Elegan */
+    padding: 15px 0;
+    position: sticky;
     top: 0;
     z-index: 1000;
-    width: 100%;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .nav-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-height: 70px;
-    padding: 10px 0;
 }
 
 .logo {
     font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--white); /* Teks Putih */
+    font-weight: 700;
+    color: #ffffff;
     text-decoration: none;
-    letter-spacing: 1px;
 }
 
 .menu {
@@ -64,52 +54,62 @@ header {
 
 .menu li a {
     text-decoration: none;
-    color: var(--white);
-    font-size: 1rem;
+    color: #dddddd;
+    font-weight: 500;
     transition: 0.3s;
 }
 
 .menu li a:hover {
-    color: var(--primary-blue); /* Jadi biru pas disentuh */
+    color: #87CEEB; /* Biru Langit pas disorot */
 }
 
 /* ========================================= */
 /* 3. HERO SECTION (TAMPILAN UTAMA)          */
 /* ========================================= */
 .hero {
-    min-height: 100vh; /* Full layar */
+    min-height: 90vh; /* Hampir full layar */
     display: flex;
-    align-items: center;
-    background-color: #f9f9f9;
+    align-items: center; /* Tengah secara vertikal */
+    background-color: #f8f9fa; /* Abu sangat muda */
 }
 
-/* Default PC: Kiri-Kanan */
-.hero .container {
+.hero-container {
     display: flex;
-    flex-direction: row; 
     align-items: center;
     justify-content: space-between;
     width: 100%;
 }
 
-/* Bagian Teks */
+/* --- Teks (Kiri) --- */
 .hero-text {
-    flex: 1;
+    flex: 1; /* Ambil sisa ruang */
+    padding-right: 50px;
 }
 
 .hero h1 {
     font-size: 3rem;
     margin-bottom: 10px;
-    color: var(--dark-grey);
+    color: #222;
+}
+
+.highlight {
+    color: #87CEEB; /* Nama Ucup warna Biru */
 }
 
 .tagline {
     font-size: 1.2rem;
     color: #555;
-    margin-bottom: 25px;
+    font-weight: 600;
+    margin-bottom: 15px;
 }
 
-/* Bagian Sosmed */
+.desc {
+    margin-bottom: 25px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* --- Sosmed --- */
 .socials {
     display: flex;
     gap: 15px;
@@ -117,116 +117,98 @@ header {
 
 .socials a {
     text-decoration: none;
-    color: var(--white);
-    background-color: var(--dark-grey);
-    padding: 10px 20px;
-    border-radius: 5px;
+    background-color: #222;
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 50px; /* Tombol Lonjong */
+    font-size: 0.9rem;
     transition: 0.3s;
 }
 
 .socials a:hover {
-    background-color: var(--primary-blue);
+    background-color: #87CEEB; /* Berubah biru pas hover */
+    transform: translateY(-3px); /* Naik dikit */
 }
 
-/* Bagian Foto */
+/* --- Gambar (Kanan) --- */
 .hero-image {
     flex: 1;
     display: flex;
-    justify-content: flex-end; /* Foto di kanan (PC) */
+    justify-content: flex-end; /* Rata Kanan */
 }
 
 .hero img {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%; /* Lingkaran */
+    width: 350px;
+    height: 350px;
     object-fit: cover;
-    border: 5px solid var(--primary-blue);
-    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    border-radius: 50%; /* Lingkaran Sempurna */
+    border: 6px solid #87CEEB; /* Border Biru */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 /* ========================================= */
 /* 4. FOOTER                                 */
 /* ========================================= */
 footer {
-    background-color: var(--dark-grey);
-    color: var(--white);
+    background-color: #222;
+    color: #fff;
     text-align: center;
     padding: 20px 0;
-    margin-top: 50px;
+    margin-top: auto;
 }
 
 /* ========================================= */
-/* 5. MEDIA QUERY (HP) - BAGIAN KRUSIAL      */
+/* 5. MEDIA QUERY (HP / MOBILE) - FIX FINAL  */
 /* ========================================= */
 @media screen and (max-width: 768px) {
-
-    /* --- FIX NAVBAR HP --- */
+    
+    /* Navbar HP */
     .nav-wrapper {
-        flex-direction: column; /* Tumpuk Logo & Menu */
-        align-items: flex-start; /* FIX: Logo nempel Kiri */
-    }
-
-    .logo {
-        width: 100%;
-        text-align: left; /* FIX: Logo Rata Kiri */
-        margin-bottom: 10px; /* Jarak ke menu bawahnya */
-        padding-left: 5px;
-    }
-
-    .menu {
-        width: 100%;
-        justify-content: center; /* Menu Rata Tengah */
-        flex-wrap: wrap;
+        flex-direction: column;
         gap: 15px;
     }
 
-    /* --- FIX HERO SECTION HP --- */
+    /* Hero HP */
     .hero {
-        padding-top: 30px;
-        min-height: auto; /* Jangan paksa full height biar ga kepotong */
-        padding-bottom: 50px;
+        padding: 40px 0;
+        text-align: center; /* Semua teks rata tengah */
+        height: auto; /* Tinggi menyesuaikan isi */
     }
 
-    .hero .container {
-        flex-direction: column-reverse; /* Foto di ATAS, Teks di BAWAH */
-        text-align: center; /* FIX: Semua Teks Rata Tengah */
+    .hero-container {
+        /* INI KUNCINYA: Membalik urutan (Gambar jadi di atas Teks) */
+        flex-direction: column-reverse; 
+        gap: 30px;
     }
 
-    /* Foto (Di Atas) */
+    /* Fix Gambar HP */
     .hero-image {
-        justify-content: center; /* Tengahin foto */
-        margin-bottom: 20px;
+        justify-content: center; /* Tengahin gambar */
         width: 100%;
     }
 
     .hero img {
-        width: 180px; /* Ukuran pas di HP */
-        height: 180px;
+        width: 200px; /* Ukuran pas HP */
+        height: 200px;
     }
 
-    /* Teks (Di Bawah Foto) */
+    /* Fix Teks HP */
     .hero-text {
+        padding-right: 0; /* Hapus padding desktop */
         width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* FIX: Paksa semua elemen teks ke tengah */
     }
 
     .hero h1 {
-        font-size: 1.8rem; /* Font Judul disesuaikan */
-        margin-top: 10px;
+        font-size: 2rem; /* Judul lebih kecil */
     }
 
     .tagline {
-        font-size: 0.95rem; /* FIX: Dikecilin sesuai request lu */
-        line-height: 1.4;
-        width: 90%; /* Biar ga mepet pinggir banget */
-        margin: 0 auto 20px auto; /* Tengahin blok teks tagline */
+        font-size: 1rem; /* Tagline lebih kecil */
     }
 
-    /* Sosmed (Di Bawah Teks) */
+    /* Fix Sosmed HP */
     .socials {
-        justify-content: center; /* FIX: Sosmed Rata Tengah */
-        width: 100%;
+        justify-content: center; /* Sosmed rata tengah */
+        flex-wrap: wrap; /* Kalau layar kekecilan banget, turun ke bawah */
     }
 }

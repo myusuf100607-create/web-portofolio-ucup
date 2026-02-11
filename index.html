@@ -3,121 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ucup.dev | Portofolio</title>
-
-    <meta name="description" content="Portofolio Ucup - Mahasiswa IT, Web Developer Pemula, dan Pecinta Kopi asal Bandung. Lihat karya saya di sini.">
-    
-    <meta name="keywords" content="Ucup, Portofolio, Mahasiswa IT, Web Developer, HTML, CSS, Bandung">
-
-    <meta name="author" content="Ucup">
-
-    <meta name="theme-color" content="#87CEEB">
-
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧑🏻‍💻</text></svg>">
-    
+    <title>Ucup Developer</title>
     <link rel="stylesheet" href="style.css">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <nav>
+    <header>
         <div class="container nav-wrapper">
-            <div class="logo">Ucup.Dev</div>
+            <a href="#" class="logo">Ucup.dev</a>
             <ul class="menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#portfolio">Portofolio</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
-    </nav>
+    </header>
 
-    <section id="home" class="hero">
-        <div class="container">
-            <img src="img/Foto_ucup copy.jpg" alt="Foto Ucup" class="profile-pic">
+    <section class="hero" id="home">
+        <div class="container hero-container">
             
-            <h1>Halo, Gua Ucup! 👋</h1>
-            <p class="tagline">Mahasiswa IT | Suka baca buku | Tidur siang juga 😴</p>
-            
-            <div class="social-links">
-                <a href="https://wa.me/6285839453413" target="_blank" class="social-btn wa">
-                    <i class="fa-brands fa-whatsapp"></i> WhatsApp
-                </a>
-                <a href="https://instagram.com/myusuf100607" target="_blank" class="social-btn ig">
-                    <i class="fa-brands fa-instagram"></i> Instagram
-                </a>
-                <a href="https://www.facebook.com/m.yusuf.529316?mibextid=rS40aB7S9Ucbxw6v" target="_blank" class="social-btn fb">
-                    <i class="fa-brands fa-facebook"></i> Facebook
-                </a>
-                <a href="https://github.com/myusuf100607-create" target="_blank" class="social-btn gh">
-                    <i class="fa-brands fa-github"></i> GitHub
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section id="about">
-        <div class="container">
-            <h2>Tentang Gua</h2>
-            <p style="max-width: 700px; margin: 0 auto;">
-                Yo! Kenalin nama gua Ucup. Gua mahasiswa Teknik Informatika yang lagi asik-asiknya ngulik dunia koding. 
-                Meskipun kadang pusing liat error merah di layar, tapi gua percaya setiap baris kode punya seni tersendiri.
-                Sekarang lagi fokus belajar bikin Web dan Manajemen Keuangan (biar gak boncos). 
-                Salam kenal, Bro!
-            </p>
-        </div>
-    </section>
-
-    <section id="skills" class="bg-light">
-        <div class="container">
-            <h2>Skillset Saat Ini</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <i class="fa-brands fa-python" style="color: #306998;"></i>
-                    <h3>Python</h3>
-                </div>
-                <div class="skill-card">
-                    <i class="fa-brands fa-html5" style="color: #E34F26;"></i>
-                    <h3>HTML5</h3>
-                </div>
-                <div class="skill-card">
-                    <i class="fa-brands fa-css3-alt" style="color: #1572B6;"></i>
-                    <h3>CSS3</h3>
-                </div>
-                <div class="skill-card">
-                    <i class="fa-solid fa-code" style="color: #007ACC;"></i>
-                    <h3>VS Code</h3>
+            <div class="hero-text">
+                <h1>Halo, Gua <span class="highlight">Ucup!</span></h1>
+                <p class="tagline">Mahasiswa IT | Suka Baca Buku | Tidur Siang Juga</p>
+                <p class="desc">
+                    Gua suka bikin web yang simpel tapi elegan. 
+                    Sekarang lagi belajar biar jago coding kayak hacker di film-film.
+                </p>
+                
+                <div class="socials">
+                    <a href="#">WhatsApp</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">Facebook</a>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section id="portfolio">
-        <div class="container">
-            <h2>Karya Gua</h2>
-            <div class="portfolio-grid">
-                <div class="project-card">
-                    <h3>📟 CLI Sistem IGD sederhana</h3>
-                    <p>Aplikasi berbasis teks (Command Line) buat management. Dibuat pake Python murni.</p>
-                    <a href="https://github.com/myusuf100607-create/PROJECT-UAS-ALPRO---SEMESTER-1---KEL8" class="btn-small">Lihat di GitHub</a>
-                </div>
-                <div class="project-card">
-                    <h3>🌐 Web Portofolio</h3>
-                    <p>Web yang lagi lu liat sekarang ini. Dibangun pake HTML & CSS dengan penuh kasih sayang.</p>
-                    <a href="#" class="btn-small">Sedang Dibuka</a>
-                </div>
+            <div class="hero-image">
+                <img src="Foto_ucup copy.jpg" alt="Foto Ucup">
             </div>
+
         </div>
     </section>
 
-   <footer>
-    <p>&copy; <span id="tahun"></span> Ucup.Dev | Dibuat sambil ngopi ☕</p>
-</footer>
-
-<script>
-    document.getElementById("tahun").textContent = new Date().getFullYear();
-</script>
+    <footer>
+        <p>&copy; 2026 Ucup Developer. Dibuat sambil ngopi.</p>
+    </footer>
 
 </body>
 </html>
