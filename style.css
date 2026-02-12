@@ -1,214 +1,453 @@
-/* ========================================= */
-/* 1. RESET & DASAR                          */
-/* ========================================= */
+/* ======================== */
+/* 1. RESET & BASIC         */
+/* ======================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
 }
 
 body {
     background-color: #ffffff;
-    color: #333333;
-    overflow-x: hidden; /* Biar gak bisa digeser ke samping */
+    color: #333;
+    line-height: 1.6;
 }
 
-/* Container biar isi web gak mepet pinggir */
 .container {
     width: 90%;
-    max-width: 1100px; /* Lebar maksimal di laptop */
-    margin: 0 auto; /* Posisi tengah */
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
-/* ========================================= */
-/* 2. NAVBAR (HEADER) - WARNA GELAP          */
-/* ========================================= */
+.bg-light {
+    background-color: #f9f9f9;
+}
+
+.section-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #222;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #87CEEB;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.section-page {
+    padding: 80px 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* ======================== */
+/* 2. NAVBAR                */
+/* ======================== */
+
 header {
-    background-color: #222222; /* Hitam Elegan */
-    padding: 15px 0;
+    background-color: #04bbdf; /* Biru Royal Pilihan Lu */
+    padding: 10px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .nav-wrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
     align-items: center;
+    width: 100%;
+    
+    /* 👇 TAMBAHIN INI BRO (Bantalan Kiri-Kanan) 👇 */
+    /* 0 = Atas Bawah, 50px = Kiri Kanan */
+    /* Lu bisa ganti 50px jadi 100px atau persen (misal 5%) sesuai selera */
+    padding: 0 50px; 
+    
+    /* Biar padding gak bikin lebar total jadi nambah (PENTING!) */
+    box-sizing: border-box; 
 }
 
 .logo {
+    color: #fff;
     font-size: 1.5rem;
-    font-weight: 700;
-    color: #ffffff;
+    font-weight: 800; /* Lebih tebel biar gagah */
     text-decoration: none;
+    letter-spacing: 1px;
 }
 
 .menu {
     display: flex;
     list-style: none;
-    gap: 20px;
+    gap: 30px; /* Jarak ANTAR MENU (Home --jarak-- About) */
 }
 
-.menu li a {
+.menu a {
+    color: #e0f2fe; /* Putih agak biru dikit biar nyatu */
     text-decoration: none;
-    color: #dddddd;
     font-weight: 500;
     transition: 0.3s;
+    font-size: 1rem;
 }
 
-.menu li a:hover {
-    color: #87CEEB; /* Biru Langit pas disorot */
+.menu a:hover {
+    color: #ffffff; /* Putih terang pas di hover */
+    text-decoration: underline; /* Garis bawah pas hover */
 }
 
-/* ========================================= */
-/* 3. HERO SECTION (TAMPILAN UTAMA)          */
-/* ========================================= */
+
+footer {
+    background-color: #1e688a;
+    color: #ffffff; /* Warna teks agak abu biar elegan */
+    text-align: center;
+    padding: 20px 0; /* Padding lebih kecil */
+    font-size: 0.9rem; /* Font lebih kecil dikit */
+    margin-top: 0; /* Reset margin kalo kejauhan */
+}
+
+
+/* ======================== */
+/* 3. HERO SECTION          */
+/* ======================== */
+.hero h1 {
+    font-size: 3rem; /* Gedein dikit biar nampol */
+    font-weight: 800;
+    color: #111827; /* Hitam pekat */
+    margin-bottom: 10px; /* Jarak ke bawah dikit */
+}
+
+/* 2. TAGLINE (Mahasiswa IT...) - INI YANG LU MINTA */
+.tagline {
+    font-size: 1.25rem; /* Lebih besar dari teks biasa */
+    font-weight: 700;   /* TEBAL (Bold) */
+    color: #2f3238;     /* Biru Royal (Biar nyala dikit jadi highlight) */
+    
+    /* JARAK JAUH KE BAWAH */
+    margin-bottom: 25px; 
+    
+    /* Opsional: Ubah jadi huruf besar semua biar kayak label */
+    /* text-transform: uppercase; */ 
+    letter-spacing: 1px; /* Renggangin huruf dikit biar elegan */
+}
+
+/* 3. DESKRIPSI (Selamat datang...) */
+.desc {
+    font-size: 1rem;    /* Ukuran standar */
+    color: #4b5563;     /* Abu-abu kalem */
+    line-height: 1.8;   /* Jarak antar baris biar enak dibaca */
+    margin-bottom: 30px; /* Jarak ke tombol */
+    max-width: 90%;     /* Biar gak kepanjangan ke samping */
+}
 .hero {
-    min-height: 90vh; /* Hampir full layar */
+    min-height: 95vh;
     display: flex;
-    align-items: center; /* Tengah secara vertikal */
-    background-color: #f8f9fa; /* Abu sangat muda */
+    align-items: center;
+    background-color: #fafafa; /* Putih kebiruan dikit */
+    position: relative; /* Wajib biar anak-anaknya bisa diatur posisinya */
+    overflow: hidden; /* Biar gelombang gak bocor keluar layar */
 }
 
+/* 1. LAYER GELOMBANG (DI BELAKANG) */
+.hero-bg-waves {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1; /* Angkanya KECIL = Di Belakang */
+    line-height: 0;
+}
+
+.hero-bg-waves svg {
+    display: block;
+    width: calc(130% + 1.3px);
+    height: auto;
+}
+
+/* 2. LAYER KONTEN UTAMA (DI DEPAN) */
 .hero-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    position: relative; /* Wajib ada ini */
+    z-index: 10; /* Angkanya GEDE = Di Depan/Atas Gelombang */
 }
 
-/* --- Teks (Kiri) --- */
+/* Style Teks */
 .hero-text {
-    flex: 1; /* Ambil sisa ruang */
-    padding-right: 50px;
+    flex: 1;
+    padding-right: 30px;
 }
 
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-    color: #222;
-}
-
-.highlight {
-    color: #87CEEB; /* Nama Ucup warna Biru */
-}
-
-.tagline {
-    font-size: 1.2rem;
-    color: #555;
-    font-weight: 600;
-    margin-bottom: 15px;
-}
-
-.desc {
-    margin-bottom: 25px;
-    color: #666;
-    line-height: 1.6;
-}
-
-/* --- Sosmed --- */
-.socials {
-    display: flex;
-    gap: 15px;
-}
-
-.socials a {
-    text-decoration: none;
-    background-color: #222;
-    color: #fff;
-    padding: 10px 25px;
-    border-radius: 50px; /* Tombol Lonjong */
-    font-size: 0.9rem;
-    transition: 0.3s;
-}
-
-.socials a:hover {
-    background-color: #87CEEB; /* Berubah biru pas hover */
-    transform: translateY(-3px); /* Naik dikit */
-}
-
-/* --- Gambar (Kanan) --- */
+/* Style Foto */
 .hero-image {
     flex: 1;
     display: flex;
-    justify-content: flex-end; /* Rata Kanan */
+    justify-content: flex-end;
 }
 
 .hero img {
     width: 350px;
     height: 350px;
     object-fit: cover;
-    border-radius: 50%; /* Lingkaran Sempurna */
-    border: 6px solid #87CEEB; /* Border Biru */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border-radius: 50%;
+    border: 8px solid #fff; /* List putih biar kontras sama gelombang */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2); /* Bayangan biar fotonya "ngambang" */
 }
 
-/* ========================================= */
-/* 4. FOOTER                                 */
-/* ========================================= */
-footer {
-    background-color: #222;
-    color: #fff;
+/* --- FIX RESPONSIVE HP --- */
+@media screen and (max-width: 768px) {
+    .hero-container {
+        flex-direction: column-reverse; /* Foto atas, Teks bawah */
+        gap: 20px;
+    }
+    
+    .hero-image {
+        justify-content: center;
+    }
+    
+    .hero img {
+        width: 220px;
+        height: 220px;
+        border-width: 5px;
+    }
+
+    /* Biar gelombang di HP gak kegedean */
+    .hero-bg-waves svg {
+        height: 150px; /* Kita set tinggi manual di HP */
+        width: auto;
+        min-width: 100%;
+    }
+}
+
+/* ======================== */
+/* 4. ABOUT SECTION         */
+/* ======================== */
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
     text-align: center;
-    padding: 20px 0;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.about-content p {
+    margin-bottom: 15px;
+}
+
+/* ======================== */
+/* 5. SKILLSET (BARU)       */
+/* ======================== */
+.skills-grid {
+    display: grid;
+    /* Otomatis ngatur kolom (Max 6 per baris di Desktop) */
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); 
+    gap: 20px;
+    justify-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.skill-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    border: 1px solid #eee;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    border-color: #87CEEB;
+}
+
+.skill-card i {
+    font-size: 5rem; /* Ukuran Logo */
+    margin-bottom: 10px;
+    display: block;
+}
+
+.skill-card span {
+    font-weight: 600;
+    color: #555;
+}
+
+/* ======================== */
+/* 6. PORTFOLIO SECTION     */
+/* ======================== */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.project-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: 0.3s;
+    border-top: 5px solid #87CEEB;
+    position: relative;
+    border: 1px solid #f0f0f0;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.project-card h3 {
+    margin-bottom: 15px;
+    color: #222;
+}
+
+.project-desc {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+.project-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-top: auto;
 }
 
-/* ========================================= */
-/* 5. MEDIA QUERY (HP / MOBILE) - FIX FINAL  */
-/* ========================================= */
+.project-links a {
+    color: #87CEEB;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.status-badge {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background-color: #eee;
+    color: #555;
+}
+
+.status-badge.active {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+/* ======================== */
+/* 7. CONTACT (SOSMED)      */
+/* ======================== */
+.contact-text {
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.socials-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-socmed {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;       /* Lebar fix */
+    height: 50px;      /* Tinggi fix */
+    background-color: #fff;
+    border-radius: 50%; /* Bikin Bulat Sempurna */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    border: 2px solid #eee;
+    overflow: hidden; /* Biar gambar gak keluar jalur */
+}
+
+.btn-socmed img {
+    width: 24px;       /* Ukuran Icon di dalemnya */
+    height: 24px;
+    object-fit: contain;
+}
+
+.btn-socmed:hover {
+    transform: translateY(-5px);
+    border-color: #0460d9; /* Warna biru pas di hover */
+}
+
+/* ======================== */
+/* 9. RESPONSIVE (HP) 📱    */
+/* ======================== */
 @media screen and (max-width: 768px) {
     
-    /* Navbar HP */
+    /* === 1. NAVBAR DI HP === */
     .nav-wrapper {
-        flex-direction: column;
-        gap: 15px;
+        /* Ubah jadi kolom (Atas-Bawah) */
+        flex-direction: column; 
+        gap: 15px; /* Jarak antara Logo dan Menu */
     }
 
-    /* Hero HP */
+    .menu {
+        gap: 20px; /* Jarak antar link menu dipersempit dikit biar muat */
+        font-size: 0.9rem; /* Ukuran font menu dikecilin dikit */
+    }
+
+    /* === 2. HERO SECTION DI HP (YANG TADI) === */
     .hero {
-        padding: 40px 0;
-        text-align: center; /* Semua teks rata tengah */
-        height: auto; /* Tinggi menyesuaikan isi */
+        padding: 40px 0 60px; /* Atur padding atas bawah */
+        text-align: center;
     }
 
     .hero-container {
-        /* INI KUNCINYA: Membalik urutan (Gambar jadi di atas Teks) */
-        flex-direction: column-reverse; 
+        flex-direction: column-reverse; /* Foto Atas, Teks Bawah */
         gap: 30px;
     }
 
-    /* Fix Gambar HP */
-    .hero-image {
-        justify-content: center; /* Tengahin gambar */
-        width: 100%;
-    }
-
-    .hero img {
-        width: 200px; /* Ukuran pas HP */
-        height: 200px;
-    }
-
-    /* Fix Teks HP */
     .hero-text {
-        padding-right: 0; /* Hapus padding desktop */
-        width: 100%;
+        padding: 0 20px; /* Biar gak mepet layar */
     }
 
     .hero h1 {
-        font-size: 2rem; /* Judul lebih kecil */
+        font-size: 2rem;
+        line-height: 1.2;
+        margin-bottom: 15px;
     }
 
+    /* Ini Tagline "Mahasiswa IT" yang lu minta tadi */
     .tagline {
-        font-size: 1rem; /* Tagline lebih kecil */
+        font-size: 1.1rem;
+        margin-bottom: 25px; /* Jarak ke deskripsi */
     }
 
-    /* Fix Sosmed HP */
-    .socials {
-        justify-content: center; /* Sosmed rata tengah */
-        flex-wrap: wrap; /* Kalau layar kekecilan banget, turun ke bawah */
+    .desc {
+        font-size: 0.95rem;
+        margin: 0 auto;
+        max-width: 90%;
+        margin-bottom: 30px;
+        padding: 0 10px; /* Biar deskripsi gak terlalu lebar */
+    }
+
+    .hero-image {
+        display: flex;
+        justify-content: center;
+    }
+
+    .hero img {
+        width: 200px; /* Ukuran foto di HP */
+        height: 200px;
     }
 }

@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+    <link rel="icon" type="image/png" href="img/informatics.png">
+    <link rel="apple-touch-icon" href="img/informatics.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ucup Developer</title>
+    
     <link rel="stylesheet" href="style.css">
+    
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
 </head>
 <body>
 
@@ -22,33 +29,139 @@
     </header>
 
     <section class="hero" id="home">
+        
+
+
         <div class="container hero-container">
-            
             <div class="hero-text">
                 <h1>Halo, Gua <span class="highlight">Ucup!</span></h1>
-                <p class="tagline">Mahasiswa IT | Suka Baca Buku | Tidur Siang Juga</p>
+                <p class="tagline">Mahasiswa IT | Suka Baca Buku | Web Developer</p>
                 <p class="desc">
-                    Gua suka bikin web yang simpel tapi elegan. 
-                    Sekarang lagi belajar biar jago coding kayak hacker di film-film.
+                    Selamat datang di digital space gua. Fokus gua saat ini adalah membangun 
+                    solusi teknologi yang simpel, efisien, dan bermanfaat.
                 </p>
-                
-                <div class="socials">
-                    <a href="#">WhatsApp</a>
-                    <a href="#">Instagram</a>
-                    <a href="#">Facebook</a>
-                </div>
+                <a href="#portfolio" class="btn-primary">Lihat Karya Gua</a>
             </div>
-
             <div class="hero-image">
-                <img src="Foto_ucup copy.jpg" alt="Foto Ucup">
+                <img src="img/profile.jpg" alt="Foto Ucup">
             </div>
+        </div>
+    </section>
 
+    <section class="section-page" id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <p>
+                    Perjalanan gua di dunia teknologi dimulai dari rasa penasaran yang besar saat masih duduk di bangku 
+                    <strong>SMA Nurul Hidayah</strong> (Jurusan MIPA) di Lampung Selatan.
+                </p>
+                <p>
+                    Sebagai anak rantau dari Desa Karang Pucung, gua memutuskan untuk melangkah lebih jauh dan 
+                    melanjutkan studi di <strong>Universitas Teknologi Bandung (UTB)</strong>. Gua percaya bahwa teknologi 
+                    adalah jembatan masa depan, dan gua ingin menjadi salah satu insinyur yang membangun jembatan tersebut.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="section-page bg-light">
+        <h2 class="section-title">Skillset</h2>
+        <div class="skills-grid">
+        <div class="skill-card">
+            <i class="devicon-python-plain colored"></i>
+            <span>Python</span>
+        </div>
+        
+        <div class="skill-card">
+            <i class="devicon-html5-plain colored"></i>
+            <span>HTML5</span>
+        </div>
+        
+        <div class="skill-card">
+            <i class="devicon-css3-plain colored"></i>
+            <span>CSS3</span>
+        </div>
+
+        <div class="skill-card">
+            <i class="devicon-github-original colored"></i>
+            <span>GitHub</span>
+        </div>
+
+        <div class="skill-card">
+            <i class="devicon-git-plain colored"></i>
+            <span>Git</span>
+        </div>
+
+        <div class="skill-card">
+            <i class="devicon-vscode-plain colored"></i>
+            <span>VS Code</span>
+        </div>
+    </div>
+    </section>
+
+    <section class="section-page bg-light" id="portfolio">
+        <div class="container">
+            <h2 class="section-title">Portofolio</h2>
+            <div class="portfolio-grid">
+                
+                <div class="project-card">
+                    <h3>IGD Management System (CLI)</h3>
+                    <p class="project-desc">
+                        Sistem manajemen Pasien Gawat Darurat berbasis Command Line Interface (CLI). 
+                        Dibuat menggunakan <strong>Python</strong> dengan implementasi struktur data 
+                        untuk simulasi antrian dan penanganan prioritas pasien secara real-time.
+                    </p>
+                    <div class="project-links">
+                        <span class="status-badge">Selesai</span>
+                        <a href="https://github.com/myusuf100607-create/web-portofolio-ucup" target="_blank">Lihat Repository &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Personal Portfolio Website</h3>
+                    <p class="project-desc">
+                        Website portofolio yang responsif dan modern. Dibangun dari nol menggunakan 
+                        HTML5 dan CSS3 murni. Dirancang dengan prinsip Mobile-First 
+                        agar nyaman diakses dari perangkat apapun.
+                    </p>
+                    <div class="project-links">
+                        <span class="status-badge active">Sedang Diakses</span>
+                        <a href="#">Live Demo &rarr;</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section-page" id="contact">
+        <div class="container text-center">
+            <h2 class="section-title">Connect with me</h2>
+            <p class="contact-text">Tertarik kolaborasi atau sekadar ngopi bareng? Klik link dibawah sini :</p>
+            
+            <div class="socials-wrapper">
+                <a href="https://wa.me/6285839453413" class="btn-socmed wa">
+                    <img src="img/whatsapp.png" alt="WA">
+                </a>
+                <a href="https://instagram.com/myusuf100607" class="btn-socmed ig">
+                    <img src="img/ig.png" alt="IG">
+                </a>
+                <a href="https://github.com/myusuf100607-create" class="btn-socmed gh">
+                    <img src="img/github.png" alt="Github">
+                </a>
+                <a href="https://www.facebook.com/m.yusuf.529316?mibextid=rS40aB7S9Ucbxw6v" class="btn-socmed fb">
+                    <img src="img/facenuk.png" alt="WA">
+                </a>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Ucup Developer. Dibuat sambil ngopi.</p>
+        <p>&copy; <span id="year"></span> Copyright. Ucup Developer. All rights reserved.</p>
     </footer>
 
+    <script>
+        document.getElementById('year').innerText = new Date().getFullYear();
+    </script>
 </body>
 </html>
